@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout Payment</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#3b82f6,#06b6d4);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:1050px;
+    display:grid;
+    grid-template-columns:1fr 420px;
+    gap:30px;
+}
+
+.payment-box,
+.summary-box{
+    background:#fff;
+    border-radius:18px;
+    padding:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+h2{
+    margin-bottom:25px;
+    color:#1f2937;
+}
+
+.section{
+    margin-bottom:25px;
+}
+
+label{
+    display:block;
+    font-size:14px;
+    margin-bottom:8px;
+    color:#555;
+    font-weight:bold;
+}
+
+input,
+select{
+    width:100%;
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    margin-bottom:18px;
+    font-size:15px;
+    outline:none;
+    transition:.3s;
+}
+
+input:focus,
+select:focus{
+    border-color:#2563eb;
+}
+
+.row{
+    display:flex;
+    gap:15px;
+}
+
+.radio-group{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.payment-option{
+    border:2px solid #ddd;
+    padding:18px;
+    border-radius:10px;
+    cursor:pointer;
+    text-align:center;
+    transition:.3s;
+}
+
+.payment-option:hover{
+    border-color:#2563eb;
+    background:#eff6ff;
+}
+
+.payment-option input{
+    margin-bottom:10px;
+}
+
+.summary-item{
+    display:flex;
+    justify-content:space-between;
+    margin:15px 0;
+    color:#555;
+}
+
+.total{
+    border-top:1px solid #ddd;
+    margin-top:20px;
+    padding-top:20px;
+    display:flex;
+    justify-content:space-between;
+    font-size:22px;
+    font-weight:bold;
+}
+
+button{
+    width:100%;
+    padding:16px;
+    background:#2563eb;
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+    margin-top:25px;
+    transition:.3s;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+.secure{
+    text-align:center;
+    margin-top:20px;
+    color:#777;
+    font-size:14px;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    font-size:30px;
+    margin-top:15px;
+}
+
+@media(max-width:900px){
+
+.container{
+grid-template-columns:1fr;
+}
+
+.row{
+flex-direction:column;
+}
+
+.radio-group{
+grid-template-columns:1fr;
+}
+
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="payment-box">
+
+<h2>💳 Checkout Payment</h2>
+
+<div class="section">
+
+<label>Full Name</label>
+<input type="text" placeholder="John Smith">
+
+<label>Email Address</label>
+<input type="email" placeholder="john@example.com">
+
+<label>Billing Address</label>
+<input type="text" placeholder="123 Street, City">
+
+</div>
+
+<div class="section">
+
+<h2>Payment Method</h2>
+
+<div class="radio-group">
+
+<label class="payment-option">
+<input type="radio" name="pay" checked>
+💳 Card
+</label>
+
+<label class="payment-option">
+<input type="radio" name="pay">
+📱 UPI
+</label>
+
+<label class="payment-option">
+<input type="radio" name="pay">
+🏦 Net Banking
+</label>
+
+<label class="payment-option">
+<input type="radio" name="pay">
+💵 Cash on Delivery
+</label>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<label>Card Number</label>
+<input type="text" placeholder="1234 5678 9012 3456">
+
+<label>Card Holder Name</label>
+<input type="text" placeholder="John Smith">
+
+<div class="row">
+
+<div style="flex:1;">
+<label>Expiry</label>
+<input type="text" placeholder="MM/YY">
+</div>
+
+<div style="flex:1;">
+<label>CVV</label>
+<input type="password" placeholder="123">
+</div>
+
+</div>
+
+</div>
+
+<button>Complete Payment</button>
+
+<div class="cards">
+💳 💰 🏦 📱
+</div>
+
+<div class="secure">
+🔒 256-bit Secure Payment
+</div>
+
+</div>
+
+<div class="summary-box">
+
+<h2>🛒 Order Summary</h2>
+
+<div class="summary-item">
+<span>Running Shoes</span>
+<span>$79.00</span>
+</div>
+
+<div class="summary-item">
+<span>Wireless Headphones</span>
+<span>$149.00</span>
+</div>
+
+<div class="summary-item">
+<span>Shipping</span>
+<span>$10.00</span>
+</div>
+
+<div class="summary-item">
+<span>Discount</span>
+<span style="color:green;">-$20.00</span>
+</div>
+
+<div class="total">
+<span>Total</span>
+<span>$218.00</span>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
